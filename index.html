@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login messenger</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+
+  <style>
+    .text{
+      margin-top: 20px;
+      font-size: 40px;
+      font-family: 'Nanum Gothic', sans-serif;
+    }
+    .para{
+      color: grey;
+      line-height: 35px;
+      font-size: 15px;
+    }
+    .btn{
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="img text-center">
+      <img src="./img/messenger img.png" width="75px" style="margin-top: 77px;" alt="">
+    </div>
+    <div class="text text-center">
+      <p>Messenger</p>
+    </div>
+    <div class="para text-center">
+      <p>Instantly connect with people in your life. <br>
+        Sign in with Facebook to get started.</p>
+    </div>
+    <div class="button text-center">
+      <button class="btn btn-primary" onclick="signIn()" type="submit">Continue with <span style="font-size: 19px; font-weight: 700;">Facebook</span></button>
+    </div>
+  </div>
+  
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+
+<script>
+var firebaseConfig = {
+    apiKey: "AIzaSyCUJ0o26AVHlLR2FZ45rHYHh3aIYjCBkJ8",
+    authDomain: "chat-app-485ce.firebaseapp.com",
+    databaseURL: "https://chat-app-485ce.firebaseio.com",
+    projectId: "chat-app-485ce",
+    storageBucket: "chat-app-485ce.appspot.com",
+    messagingSenderId: "412261535201",
+    appId: "1:412261535201:web:50adc076952bc3a443d6a0"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script src="app.js"></script>
+</html>

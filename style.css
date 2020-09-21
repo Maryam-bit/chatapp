@@ -1,0 +1,229 @@
+body,html{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* background-image: linear-gradient( #303030, #1f1f1f); */
+}
+body.dark{
+    background-image: linear-gradient( #303030, #1f1f1f);
+}
+/*
+.top{
+height: 100px;
+width: 100%;
+position: fixed;
+background-color: #38a8f2;
+z-index: -1;
+}*/
+.chatbox{
+    /* height: calc(100% - 40px); */
+    width: 100%;
+    height: 100%;
+    /* margin-top: 20px; */
+    /* background-color: #303030; */
+    /* box-shadow: 2px 2px 10px black; */
+    /* padding: 0; */
+}
+body.dark.card .card-header{
+    background-color: #303030;
+}
+
+.profilePic{
+    height: 40px;
+    width: 40px;
+    margin-left: -10px;
+}
+.friendPic{
+    height: 50px;
+    width: 50px;
+    margin-left: -17px;
+}
+
+.form-rounded{
+    border-radius: 1rem;
+}
+.name{
+    font-weight: 400;
+    color: #1f1f1f;
+    position: relative;
+    right: 10px;
+}
+body.dark .name{
+    color: white;
+}
+.under-name{
+    color: #6b6b6b;
+    font-size: 13px;
+    line-height: 20px;
+    max-height: 20px;
+    position: relative;
+    right: 10px;
+}
+body.dark .left-card{
+    background-color: #303030;
+}
+.left-card ul li{
+    border:none;
+}
+body.dark .left-card ul li{
+    background-color: #303030;
+}
+.left-card{
+    /* border-right: 1px solid #424242; */
+    border-right: 1px solid #dedcdc;
+    height: 100%;
+    /* box-shadow: 2px 0 1px #303030; */
+    box-shadow:  0 0 5px #cccaca;
+    position: relative;
+    right: 12px;
+}
+body.dark .left-card{
+    border-right: 1px solid #424242;
+    box-shadow: 2px 0 1px #303030;
+}
+.left-card ul li{
+    padding-left: 20px;
+}
+#userName{
+    color: black;
+}
+body.dark #userName{
+    color: white;
+}
+
+.card{
+    height: 100vh;
+    position: relative;
+    right: 40px;
+    width: 105%;
+    border:none;
+}
+body.dark .card .card-header , body.dark .card .card-footer{
+background-color: #303030;
+}
+body.dark .card .card-footer{
+    background-color: #1f1f1f;
+
+}
+body.dark .card .card-body{
+    background-color: #1f1f1f;
+}
+/* body.dark .card .card-body, .card .card-footer{ */
+    /* background-color: #1f1f1f; */
+/* } */
+.card .card-footer .fa{
+    color: #38a8f2;
+}
+
+.chatbox .card .card-footer input::placeholder , .left-card ul li input::placeholder{
+    color: #969696;
+    font-size: 14px;
+}
+
+
+
+.login .card{
+    height: 50vh;
+    margin-top: 24%;
+    border-radius: 10px;
+}
+.login .card .card-header h5{
+color: white;
+
+}
+.login .card .card-body{
+    padding: 7%;
+}
+.login .card input{
+    margin-bottom: 30px;
+}
+
+
+body.dark .receive{
+    background-image: linear-gradient(#6e6e6e, #5b5c5b, #424242);
+    border-radius: 30px;
+    border: greenyellow;
+    padding: 10px 15px;
+    color: white;
+    display: inline-block;
+}
+.receive{
+    border-radius: 30px;
+    padding: 10px 15px;
+    color: white;
+    display: inline-block;
+    background-image: linear-gradient(#bdbcbb, #a6a6a6, #949392);
+}
+
+.sent{
+    background-image: linear-gradient( #80cc62,#74b85a, #69a651, #649e4d);
+    border-radius: 30px;
+    padding: 10px 15px;
+    color: white;
+    display: inline-block;
+}
+.chatPic{
+    width: 25px;
+    height: 25px;
+}
+
+#messages{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.chatbox .card .card-footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.card-footer input , .left-card ul input , .card-body ul input{
+background-color: #f2f0f0;
+ border: 1px solid #e6e6e6; 
+ color: #6b6b6b;
+}
+body.dark .card-footer input , body.dark .left-card ul input , body.dark .card-body ul input{
+    background-color: #303030;
+    border: 1px solid #424242;
+    color: #dedcdc;
+}
+.left-card .card-header .fa{
+    color: black;
+    margin-top: 10px;
+}
+body.dark .left-card .card-header .fa{
+    color: white;
+}
+@media (max-width:1112px){
+.left-card .card-header .fa{
+    margin-top: -12px;
+}
+}
+@media (max-width:955px){
+    #userName{
+        display: none;
+    }
+    #lstChat .name , .under-name{
+        color: white;
+    }
+    body.dark #lstChat .name , .under-name{
+        color:#303030;
+    }
+}
+@media(max-width:500px){
+    #lstChat .friendPic{
+        width: 35px;
+        height: 35px;
+    }
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messenger</title>
+  <!-- bootstrap link  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- font awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="pink/styleswitcher.css">
+
+    <!-- live style switcher  -->
+    <link rel="stylesheet" class="alternate-style"  title="pink" href="pink/pink.css">
+    <link rel="stylesheet" class="alternate-style" title="blue" href="pink/blue.css" disabled>
+    <link rel="stylesheet" class="alternate-style" title="orange" href="pink/orange.css" disabled>
+    <link rel="stylesheet" class="alternate-style" title="yellow" href="pink/yellow.css" disabled>
+    <link rel="stylesheet" class="alternate-style" title="green" href="pink/green.css" disabled>
+    <link rel="stylesheet" href="pink/styleswitcher.css">
+    
+
+</head>
+
+<body>
+  <span class="top"></span>
+  <!-- <div class="container-fluid chatbox shadow-lg rounded"> -->
+    <div class="container-fluid h-100">
+    <div class="row h-100">
+
+
+      <div class="col-md-4 col-sm-2 col-2" id="side-1">
+        <div class="left-card">
+
+          <div class="card-header ">
+            <div class="row">
+
+              <div class="col-md-10 col-sm-10 col-10">
+                <img src="./img/profile-icon-png-910-Windows.ico" id="imgProfile" class="rounded-circle profilePic"
+                  alt="">
+                <span id="userName" margin-left: 10px;"></span>
+              </div>
+
+              <div class=" col-md-2 col-sm-2 col-2">
+                <div class="dropleft">
+                  <span class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-cog icon"
+                      style="cursor: pointer; float: right; font-size: 20px;"></i>
+                  </span>
+                  <div class="dropdown-menu">
+                    <a href="#" class="dropdown-item" onclick="populateFriendList()" data-toggle="modal"
+                      data-target="#modalFriendList">chat list</a>
+                    <button class="dropdown-item" onclick="signOut()" type="submit">Sign Out</button>
+                  </div>
+                  <div class="modal fade" id="modalFriendList">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="card" style="margin-left: 20px;">
+                          <div class="card-header" style="height: 9%;">
+                            <h5 style="color: #8f8d8d;">Friend List</h5>
+                            <span class="close" data-dismiss="modal"
+                              style="cursor: pointer; position: relative; bottom: 35px; color: #8f8d8d;">&times;</span>
+                          </div>
+                          <div class="card-body">
+                            <ul class="list-gorup p-0" id="lstFriend"></ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <ul class="list-gorup p-0" id="lstChat">
+          </ul>
+
+        </div>
+      </div>
+
+       <!-- M E N E   STYLE REMOVE KIA , JIS MY DISPLAY NONE LIKHA THA  -->
+      <div class="col-md-8 col-sm-10 col-10" id="side-2">
+        <div id="chatPanel" class="card" style="display: none;">
+
+          <div class="card-header">
+            <div class="row">
+              <div class="col-lg-1 col-md-2 col-sm-2 col-2">
+                <img src="./img/profile-icon-png-910-Windows.ico" id="imgChat" class="rounded-circle profilePic" alt="">
+              </div>
+              <div class="col-lg-11 col-md-10 col-sm-10 col-10">
+                <div class="name" id="divChatName" style="margin-top: 7px;">Any Name</div>
+                <!-- <div class="under-name" id="divChatSeen">Acrive on Messenger</div> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body" id="messages">
+
+          </div>
+
+          <div class="card-footer">
+            <div class="row">
+              <div class="col-md-1 col-2">
+                <i class="fa fa-file-image-o fa-2x"></i>
+              </div>
+              <div class="col-md-10 col-8">
+                <input type="text" placeholder="Type Here" class="form-control form-rounded" id="txtmessage">
+              </div>
+              <div class="col-md-1 col-2">
+                <i class="fa fa-sign-in fa-2x" onclick="sendMessage()" id="button"></i>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+
+        <div id="divStart" class="text-center">
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+
+<!-- live style switcher  -->
+<div class="style-switcher" style="position: absolute;top: 10px;">
+  <div class="toggle-style-switcher">
+    <i class="fa fa-cog fa-spin"></i>
+  </div>
+  <h5>style switcher</h5>
+  <ul>
+    <li><a href="javascript:void(0);" title="pink" style="background-color: #ec1839" onclick="setActiveStyle('pink')"></a></li>
+    <li><a href="javascript:void(0);" title="blue" style="background-color: #2196f3" onclick="setActiveStyle('blue')"></a></li>
+    <li><a href="javascript:void(0);" title="orange" style="background-color: #fa5b0f" onclick="setActiveStyle('orange')"></a></li>
+    <li><a href="javascript:void(0);" title="yellow" style="background-color: #ffb400" onclick="setActiveStyle('yellow')"></a></li>
+    <li><a href="javascript:void(0);" title="green" style="background-color: #72b626" onclick="setActiveStyle('green')"></a></li>
+  </ul>
+  <h5>Body Skin</h5>
+  <label>
+    <input type="radio" class="body-skin" name="body-style" value="light" checked="true">
+    <span style="color: #8f8d8d; font-size: 13px;">light</span>
+  </label>
+<label>
+  <input type="radio" class="body-skin" name="body-style" value="dark">
+  <span style="color:#8f8d8d; font-size: 13px;" >dark</span>
+</label>
+</div>
+
+
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCUJ0o26AVHlLR2FZ45rHYHh3aIYjCBkJ8",
+    authDomain: "chat-app-485ce.firebaseapp.com",
+    databaseURL: "https://chat-app-485ce.firebaseio.com",
+    projectId: "chat-app-485ce",
+    storageBucket: "chat-app-485ce.appspot.com",
+    messagingSenderId: "412261535201",
+    appId: "1:412261535201:web:50adc076952bc3a443d6a0",
+    measurementId: "G-FWTKG3RKVJ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script src="app.js"></script>
+<script src="styleSwitcher.js"></script>
+</html>
